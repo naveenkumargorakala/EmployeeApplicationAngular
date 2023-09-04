@@ -21,29 +21,25 @@ export class AddEmployeeComponent {
     { id: 5, name: "Other", value: "Other", checked: false }
   ]
 
-
-  salaryForm: any;
+  // salaryForm: any;
   salary: number = 400000;
   updateSetting(event: any) {
     this.salary = event.value;
   }
 
-  
   constructor(private formBuilder: FormBuilder, 
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private snackBar: MatSnackBar) {
       this.employeeFormGroup = this.formBuilder.group({
       name: new FormControl('', [Validators.required, Validators.pattern("^[A-Z][a-zA-Z\\s]{2,}$")]),
-      profileimage: new FormControl('', [Validators.required]),
+      profilePic: new FormControl('', [Validators.required]),
       gender: new FormControl('', [Validators.required]),
       department: this.formBuilder.array([], [Validators.required]),
       salary: new FormControl('', [Validators.required]),
       startDate: new FormControl('', [Validators.required, this.dateBeforeTodayValidator()]),
-      notes: new FormControl('', [Validators.required]) 
+      note: new FormControl('', [Validators.required]) 
     })
-  
-  
   }
 
 dateBeforeTodayValidator() {
@@ -69,6 +65,7 @@ dateBeforeTodayValidator() {
     const dataString = JSON.stringify(this.employeeFormGroup.value);
     localStorage.setItem('formData', dataString);
     this.employeeFormGroup.reset();
+    console.log(dataString)
   }
 
   onCheckboxChange(event: MatCheckboxChange) {
@@ -80,5 +77,8 @@ dateBeforeTodayValidator() {
       department.removeAt(index);
     }
   }
+
+    
+
 
 }

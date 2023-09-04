@@ -1,1 +1,54 @@
-<p>home works!</p>
+<app-header></app-header>
+<div class="main-content">
+    <div class="header-content">
+        <div class="emp-detail-text">
+            Employee Details <div class="emp-count">{{employeeCount}}</div>
+          </div>
+    <a class="add-button" routerLink="/add">
+        <img src="../assets/icons/add-24px.svg" alt="">Add User</a>
+    </div>
+    <div class="table-main">
+    <table  id="table-display" class="table">
+        <tr style="font-size: 22px;">
+            <th>profile</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Department</th>
+            <th>Salary</th>
+            <th>StartDate</th>
+            <th>Actions</th>
+        </tr>
+        <tr style="font-size: 18px;">
+            <td>
+                <img class="profile" src="../assets/profile-images/Ellipse -2.png">
+            </td>
+            <td>Naveen</td>
+            <td>Male</td>
+            <td>Developer</td>
+            <td>45000</td>
+            <td>31/03/2023</td>
+            <td>
+                <img src="../assets/icons/delete-black-18dp.svg" alt="delete" height="25px" width='25px'>
+                &nbsp;
+                <img  src="../assets/icons/create-black-18dp.svg" alt="edit" height="25px" width='25px' > 
+            </td>
+        </tr>
+
+        <tr style="font-size: 18px;">
+            <td>
+                <img class="profile" src="../assets/profile-images/Ellipse -3.png">
+            </td>
+            <td>Kumar</td>
+            <td>Male</td>
+            <td>Tester</td>
+            <td>40000</td>
+            <td>11/06/2023</td>
+            <td>
+                <img src="../assets/icons/delete-black-18dp.svg" alt="delete" height="25px" width='25px'>
+                &nbsp;
+                <img  src="../assets/icons/create-black-18dp.svg" alt="edit" height="25px" width='25px' > 
+            </td>
+        </tr>
+
+    </table>
+</div>
