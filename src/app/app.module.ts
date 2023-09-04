@@ -8,10 +8,14 @@ import { AngularMaterialModule } from './material/angular-material/angular-mater
 import { AddEmployeeComponent } from './components/add-employee/add-employee.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatSliderModule} from '@angular/material/slider';
+import { HomeComponent } from './components/home/home.component';
+import { HeaderComponent } from './components/header/header.component';
 @NgModule({
   declarations: [
     AppComponent,
     AddEmployeeComponent,
+    HomeComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
