@@ -7,9 +7,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './material/angular-material/angular-material.module';
 import { AddEmployeeComponent } from './components/add-employee/add-employee.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatSliderModule} from '@angular/material/slider';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +24,8 @@ import { HeaderComponent } from './components/header/header.component';
     AngularMaterialModule,
     ReactiveFormsModule,
     FormsModule,
-    MatSliderModule
+    HttpClientModule
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

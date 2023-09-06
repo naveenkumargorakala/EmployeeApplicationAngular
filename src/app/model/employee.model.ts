@@ -3,8 +3,10 @@ export class Employee {
     name!:string;
     profilePic!:string;
     gender!:string;
+    email!:string;
+    phoneNumber!:string;
     department!:string[];
     salary!:string;
-    date!:string;
+    startDate!:string;
     notes!:string;
 }

@@ -59,6 +59,27 @@
           </mat-radio-group>
         </div>
       </div>
+
+      <!-- Email -->
+      <div class="row-content">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input type="email" class="name-input" matInput formControlName="email">
+          <!-- <mat-error *ngIf="checkError('name', 'required')">Name is required!</mat-error>
+          <mat-error *ngIf="checkError1('name', 'pattern')">Name should start with uppercase and consist of at least 3 characters!</mat-error>
+          <span class="mat-error" *ngIf="name.touched">Name is required!</span> -->
+        </mat-form-field>
+      </div>
+
+      <div class="row-content">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Phone Number</mat-label>
+          <input type="phone" class="name-input" matInput formControlName="phoneNumber">
+          <!-- <mat-error *ngIf="checkError('name', 'required')">Name is required!</mat-error>
+          <mat-error *ngIf="checkError1('name', 'pattern')">Name should start with uppercase and consist of at least 3 characters!</mat-error>
+          <span class="mat-error" *ngIf="name.touched">Name is required!</span> -->
+        </mat-form-field>
+      </div>
   
       <!------Input Department------->
       <div class="row-content">

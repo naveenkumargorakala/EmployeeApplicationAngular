@@ -1,8 +1,10 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatCheckboxChange } from '@angular/material/checkbox';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
+import { HttpService } from 'src/app/services/http.service';
 
 @Component({
   selector: 'app-add-employee',
@@ -30,11 +32,14 @@ export class AddEmployeeComponent {
   constructor(private formBuilder: FormBuilder, 
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private snackBar: MatSnackBar) {
+    private snackBar: MatSnackBar,
+    private httpservice:HttpService) {
       this.employeeFormGroup = this.formBuilder.group({
       name: new FormControl('', [Validators.required, Validators.pattern("^[A-Z][a-zA-Z\\s]{2,}$")]),
       profilePic: new FormControl('', [Validators.required]),
       gender: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required]),
+      phoneNumber: new FormControl('',[Validators.required]),
       department: this.formBuilder.array([], [Validators.required]),
       salary: new FormControl('', [Validators.required]),
       startDate: new FormControl('', [Validators.required, this.dateBeforeTodayValidator()]),
@@ -62,10 +67,21 @@ dateBeforeTodayValidator() {
   }
 
   onSubmit() {
-    const dataString = JSON.stringify(this.employeeFormGroup.value);
-    localStorage.setItem('formData', dataString);
-    this.employeeFormGroup.reset();
-    console.log(dataString)
+    // const dataString = JSON.stringify(this.employeeFormGroup.value);
+    // localStorage.setItem('formData', dataString);
+    // this.employeeFormGroup.reset();
+    // console.log(dataString)
+
+    // this.httpservice.addEmployeeData(dataString).subscribe(response =>
+    //   {
+    //     console.log(response);
+    //     this.router.navigate(['home'])
+        
+    //   })
+
+    this.httpservice.addEmployeeData(this.employeeFormGroup.value).subscribe(response =>{
+      console.log(response);
+    })
   }
 
   onCheckboxChange(event: MatCheckboxChange) {
